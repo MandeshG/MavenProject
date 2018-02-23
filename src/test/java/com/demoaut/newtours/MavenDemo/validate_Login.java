@@ -1,7 +1,7 @@
 package com.demoaut.newtours.MavenDemo;
 
 import org.openqa.selenium.By;
-
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class validate_Login extends BaseTest {
@@ -12,8 +12,8 @@ public class validate_Login extends BaseTest {
 		Login ll = new Login(driver);
 		ll.login_App("mercury", "mercury");
 
-		//boolean signOff = driver.findElement(By.linkText("SIGN-OFF")).isDisplayed();
-		//Assert.assertTrue(signOff);
+		boolean signOff = driver.findElement(By.linkText("SIGN-OFF")).isDisplayed();
+		Assert.assertTrue(signOff);
 		
 		if (driver.findElement(By.linkText("SIGN-OFF")).isDisplayed()){
 			System.out.println("Home Page is Displayed");
